@@ -1,0 +1,11 @@
+<h1>{{ mensaje }}</h1>
+{% if latest_surveys %}
+    <ul>
+    {% for survey in latest_surveys %}
+    <li><a href="{% url 'polls:detail' survey.id %}">{{ survey.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+<!--No polls are available.-->
+<p> No hay hay encuestas activas o disponibles</p>
+{% endif %}
